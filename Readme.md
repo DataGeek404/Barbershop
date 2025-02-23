@@ -66,8 +66,8 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 For any questions or collaborations, feel free to reach out:
-- Email: example@barbershop.com
-- Website: [www.yourbarbershop.com](#)
+- Email: info@barbershop.com
+- Website: [www.barbershop.com](#)
 - Social Media: [Facebook](#) | [Instagram](#)
 
 ---
