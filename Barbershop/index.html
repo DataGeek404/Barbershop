@@ -3,298 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbershop</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Elite Barbershop - Professional Grooming</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* General Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #d4af37;
+            --light: #f8f9fa;
         }
 
         body {
-            background-color: #f8f8f8;
-            color: #333;
-            text-align: center;
+            font-family: 'Arial', sans-serif;
+            color: var(--primary);
+            line-height: 1.6;
         }
 
-        h1, h2, h3 {
-            margin-bottom: 15px;
-            color: #111;
+        .navbar {
+            background-color: var(--primary);
         }
 
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #c0392b;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
-            transition: background 0.3s;
+        .navbar-brand, .nav-link {
+            color: var(--light) !important;
         }
 
-        .btn:hover {
-            background-color: #a93226;
+        .nav-link:hover {
+            color: var(--secondary) !important;
         }
 
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #222;
-            padding: 15px 10%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-
-        nav .logo img {
-            height: 50px;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-        }
-
-        .nav-links li {
-            margin: 0 15px;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-        }
-
-        .hamburger {
-            display: none;
-            font-size: 24px;
-            color: white;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
         .hero {
-            background: url('assets/images/gallery/barbershop.jpg') no-repeat center center/cover;
-            color: white;
-            padding: 100px 20px;
-            margin-top: 80px;
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 5rem 0;
         }
 
-        .hero h1 {
-            font-size: 40px;
-            color:#111;
-        }
-        .hero p{
-            font-size: 18px;
-            margin:10px 0 20px;
-            color:#111;
-            font-family: Georgia, 'Times New Roman', Times, serif;
+        .svg-container {
+            max-width: 300px;
+            margin: 2rem auto;
         }
 
-        /* Sections */
-        section {
-            padding: 50px 20px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        #scissors {
+            animation: snip 2s infinite;
         }
 
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
+        @keyframes snip {
+            0% { transform: rotate(0deg); }
+            50% { transform: rotate(20deg); }
+            100% { transform: rotate(0deg); }
         }
 
-        .container {
-            max-width: 900px;
-            margin: auto;
+        .service-card {
+            transition: transform 0.3s;
         }
 
-        /* Services Preview */
-        .services-list {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
+        .service-card:hover {
+            transform: translateY(-10px);
         }
 
-        .service {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 250px;
-            text-align: center;
+        .btn-primary {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
         }
 
-        /* Testimonials */
-        .testimonials blockquote {
-            font-style: italic;
-            margin: 20px 0;
+        .btn-primary:hover {
+            background-color: #b8972f;
+            border-color: #b8972f;
         }
 
-        /* Call to Action */
-        .cta {
-            background-color: #222;
-            color: white;
-            padding: 50px 20px;
-        }
-
-        /* Footer */
         footer {
-            background-color: #111;
-            color: white;
-            padding: 20px;
-            font-size: 14px;
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 2rem 0;
         }
 
-        footer a {
-            color: #c0392b;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive Navbar */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                background: #222;
-                padding: 10px 0;
-                text-align: center;
+            .hero {
+                padding: 3rem 0;
             }
-
-            .nav-links li {
-                margin: 10px 0;
-            }
-
-            .nav-links a {
-                font-size: 18px;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .hamburger {
-                display: block;
+            .svg-container {
+                max-width: 200px;
             }
         }
     </style>
 </head>
 <body>
-
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="logo">
-            <img src="assets/images/logo.jpg" alt="Barbershop Logo">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">Elite Barbershop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#book">Book Now</a></li>
+                </ul>
+            </div>
         </div>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="contact.html" class="btn">Book Now</a></li>
-        </ul>
-        <div class="hamburger">&#9776;</div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Style That Speaks</h1>
-            <p>Premium haircuts and grooming services for the modern man</p>
-            <a href="services.html" class="btn">Explore Services</a>
-        </div>
-    </header>
-
-    <!-- About Preview -->
-    <section class="about-preview">
+    <section id="home" class="hero text-center">
         <div class="container">
-            <h2>About Us</h2>
-            <p>At Here at Barbershop, we offer expert haircuts, beard trims, and grooming services with a touch of class.</p>
-            <a href="about.html" class="btn">Learn More</a>
+            <h1 class="display-4 fw-bold">Precision Cuts & Classic Style</h1>
+            <p class="lead">Experience the art of grooming at its finest</p>
+            <div class="svg-container">
+                <svg width="100%" height="100%" viewBox="0 0 200 200" id="scissors">
+                    <g transform="translate(100,100)">
+                        <path d="M-50,0 L50,0 M0,-50 L0,50" stroke="#d4af37" stroke-width="8"/>
+                        <circle cx="-30" cy="20" r="15" fill="#d4af37"/>
+                        <circle cx="30" cy="20" r="15" fill="#d4af37"/>
+                    </g>
+                </svg>
+            </div>
+            <a href="#book" class="btn btn-primary btn-lg mt-3">Book Appointment</a>
         </div>
     </section>
 
-    <!-- Services Preview -->
-    <section class="services-preview">
+    <!-- Services Section -->
+    <section id="services" class="py-5">
         <div class="container">
-            <h2>Our Services</h2>
-            <div class="services-list">
-                <div class="service">
-                    <h3>✂ Haircuts</h3>
-                    <p>Precision haircuts for all styles.</p>
+            <h2 class="text-center mb-5">Our Services</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="service-card text-center p-4 shadow">
+                        <h3>Haircut</h3>
+                        <p>Precision cuts tailored to your style</p>
+                        <p class="fw-bold">$35</p>
+                    </div>
                 </div>
-                <div class="service">
-                    <h3>🧔 Beard Grooming</h3>
-                    <p>Expert beard trims and shaping.</p>
+                <div class="col-md-4">
+                    <div class="service-card text-center p-4 shadow">
+                        <h3>Beard Trim</h3>
+                        <p>Expert shaping and grooming</p>
+                        <p class="fw-bold">$25</p>
+                    </div>
                 </div>
-                <div class="service">
-                    <h3>💈 Shaving</h3>
-                    <p>Hot towel shaves with precision.</p>
+                <div class="col-md-4">
+                    <div class="service-card text-center p-4 shadow">
+                        <h3>Hot Shave</h3>
+                        <p>Traditional straight razor experience</p>
+                        <p class="fw-bold">$40</p>
+                    </div>
                 </div>
             </div>
-            <a href="services.html" class="btn">View All Services</a>
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="cta">
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
         <div class="container">
-            <h2>Book Your Appointment</h2>
-            <p>Don’t wait! Get the best haircut experience today.</p>
-            <a href="contact.html" class="btn">Schedule Now</a>
+            <h2 class="text-center mb-5">About Us</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>With over 15 years of experience, Elite Barbershop brings you master craftsmanship and timeless style. Our skilled barbers are dedicated to providing exceptional grooming services in a welcoming atmosphere.</p>
+                </div>
+                <div class="col-md-6">
+                    <p>We use only premium products and maintain the highest standards of cleanliness. Step into Elite Barbershop and leave looking and feeling your best.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking CTA -->
+    <section id="book" class="py-5 text-center">
+        <div class="container">
+            <h2 class="mb-4">Ready for a Fresh Cut?</h2>
+            <a href="#" class="btn btn-primary btn-lg">Book Now</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>© 2025  Barbershop | Follow us on 
-            <a href="https://www.facebook.com/prime_e6" target="_blank">
-                <i class="fab fa-facebook"></i>  &  <a href="https://www.instagram.com/prime_e6" target="_blank">
-                    <i class="fab fa-instagram"></i>
-        </p>
+        <div class="container text-center">
+            <p>&copy; 2025 Elite Barbershop. All rights reserved.</p>
+            <p>| info@elitebarbershop.com</p>
+        </div>
     </footer>
 
-    <script>
-        // Responsive Navbar Toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Scroll Animation
-        const sections = document.querySelectorAll('section');
-
-        function revealSections() {
-            sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                if (sectionTop < window.innerHeight - 50) {
-                    section.classList.add('visible');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', revealSections);
-        revealSections(); 
-    </script>
-
+    <!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
