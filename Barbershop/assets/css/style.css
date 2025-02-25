@@ -1,0 +1,192 @@
+/* About Us Section */
+#about {
+    padding: 30px 15px; /* Reduced padding for smaller screens */
+    background-color: #fff;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%; /* Maintain full width */
+    height: 380px; /* Set a smaller height */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #10f181;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #09c5d3;
+}
+
+/* Contact Section */
+#contact {
+    padding: 30px 15px; /* Reduced padding for smaller screens */
+    background-color: #f9f9f9;
+}
+
+.contact-container {
+    display: flex;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.map-container {
+    flex: 1;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 400px; /* Adjusted height to match the embed code */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form-container {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: #915fa6;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #7a4c8c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* About Us Section */
+    .about-container {
+        flex-direction: column;
+        gap: 20px; /* Reduced gap for smaller screens */
+    }
+    .about-image, .about-text {
+        flex: none;
+        width: 100%;
+    }
+    .about-image img {
+        height: 250px; /* Adjusted height for smaller screens */
+    }
+    .about-text h2 {
+        font-size: 1.8rem; /* Smaller font size for smaller screens */
+    }
+    .about-text p {
+        font-size: 1rem; /* Smaller font size for smaller screens */
+    }
+
+    /* Contact Section */
+    .contact-container {
+        flex-direction: column;
+        gap: 20px; /* Reduced gap for smaller screens */
+    }
+    .map-container, .form-container {
+        flex: none;
+        width: 90%;
+    }
+    .map-container iframe {
+        height: 300px; /* Adjusted height for smaller screens */
+    }
+    .form-container h2 {
+        font-size: 1.8rem; /* Smaller font size for smaller screens */
+    }
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.9rem; /* Smaller font size for smaller screens */
+    }
+    button[type="submit"] {
+        font-size: 0.9rem; /* Smaller font size for smaller screens */
+    }
+}
+
+/* Extra Small Screens (e.g., phones) */
+@media (max-width: 480px) {
+    /* About Us Section */
+    .about-image img {
+        height: 200px; /* Further reduced height for very small screens */
+    }
+    .about-text h2 {
+        font-size: 1.5rem; /* Even smaller font size for very small screens */
+    }
+    .about-text p {
+        font-size: 0.9rem; /* Even smaller font size for very small screens */
+    }
+
+    /* Contact Section */
+    .map-container iframe {
+        height: 250px; /* Further reduced height for very small screens */
+    }
+    .form-container h2 {
+        font-size: 1.5rem; /* Even smaller font size for very small screens */
+    }
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.8rem; /* Even smaller font size for very small screens */
+    }
+    button[type="submit"] {
+        font-size: 0.8rem; /* Even smaller font size for very small screens */
+    }
+}
